@@ -16,11 +16,11 @@
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
 		if (navigator.getUserMedia) {
-			navigaotr.getUserMedia({video: true}, handleVideo, videoError);
+			navigator.getUserMedia({video: true}, handleVideo, videoError);
 		}
 
 		function handleVideo(stream) {
-			document.querySelector('#vidDisplay').srcObject = stream;
+			document.querySelector('#vidDisplay').src = window.URL.createObjectURL(stream);
 		}
 
 		function videoError(e){
