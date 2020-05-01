@@ -20,7 +20,7 @@
 		}
 
 		function handleVideo(stream) {
-			document.querySelector('#vidDisplay').srcObject = window.URL.createObjectURL(stream);
+			document.querySelector('#vidDisplay').srcObject = stream;
 		}
 
 		function videoError(e){
